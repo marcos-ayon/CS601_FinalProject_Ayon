@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marcos Ayon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.11/vue.global.min.js" 
+    integrity="sha512-jUvo4wLmasBQ4VBRwG9qkfOP/6GkSepADybOv52QFmqEYQlPx8ihGINjxQkiaH+ygvkI0XI2dMSvPs2BcFL5Zg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>About Me</title>
+</head>
+<body>
+    <nav>
+        <p>Marcos Ayon</p>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_me.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact_me.html">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="header-image-overlay">
+            <img id="header_image" src="/media/images/tucson_image.jpg" alt="Image of Tucson near U of A campus">
+            <div class="dark-overlay"></div>
+            <div class="overlay-text">
+                <h2>About Me</h2>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="app"></div>
+
+    <script>
+        const app = Vue.createApp({
+        template: `
+            <div>
+                <main-content></main-content>
+            </div>
+            `,
+        });
+
+        app.component('main-content', {
+        template: `
+            <main id="about_me_content">
+                <div class="about_me_text">
+                    <p v-for="(paragraph, index) in paragraphs" :key="index" v-html="paragraph"></p>
+                </div>
+            </main>
+        `,
+        data() {
+            return {
+                paragraphs: [],
+            };
+        },
+        mounted() {
+            //load text content from file
+            fetch('/media/documents/about_me.txt')
+                .then(response => {
+                    return response.text();
+                })
+                .then(text => {
+                    //split the text into paragraphs for <p> tags
+                    this.paragraphs = text.split('\n');
+                })
+                .catch(error => {
+                    //log any errors
+                    console.error('Fetch error:', error);
+                });
+            },
+        });
+
+        app.mount('#app');
+    </script>
+
+    <footer><p>&copy; 2023 Marcos Ayon</p></footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marcos Ayon">
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Portfolio</title>
+</head>
+<body class="portfolio_body">
+    <nav>
+        <p>Marcos Ayon</p>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_me.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact_me.html">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="header-image-overlay">
+            <img id="header_image" src="/media/images/work_in_progress.jpg" alt="Image of a desk with a notebook on it." style="max-width: 100%;">
+            <div class="dark-overlay"></div>
+            <div class="overlay-text">
+                <h2>Portfolio</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="portfolio_main">
+        <div id="work_in_progress" class="fade_from_below">
+            <h2>Work in Progress: Explore My Projects</h2>
+            <ul class="video_list">
+                <li class="video_item">
+                    <div class="video_content">
+                        <video controls width="250">
+                        <source src="/media/videos/David_Webiste_Scroll.mov" type="video/mp4">
+                    
+                        Download the
+                        <a href="/media/videos/David_Webiste_Scroll.mov">MP4</a>
+                        video.
+                        </video>
+                    </div>
+                    <div class="video_info">
+                        <h2><a href="https://www.davidrlmusic.com">David's Music Website</a></h2>
+                        <h4>(Coming Soon)</h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="skills" class="fade_from_below">
+            <h2>Skills</h2>
+            <table id="skills_table">
+                <tr>
+                    <th>Skill</th>
+                    <th>Proficiency</th>
+                </tr>
+                <tr>
+                    <td>HTML/CSS</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>C#</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>Razor</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>Intermediate</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer><p>&copy; 2023 Marcos Ayon</p></footer>
+</body>
+</html>

@@ -1,0 +1,429 @@
+
+/* Nav bar styles ============================================ */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav p {
+    padding-left: 10px;
+    color: #333;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+} 
+nav li {
+    float: left;
+}
+nav li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav  li a:hover {
+    /* Change nav color on hover */
+    background-color: #f4f4f4f4;
+}
+
+/* Media query for screens smaller than 768 pixels (adjust as needed) */
+@media only screen and (max-width: 500px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav p {
+        display: none;
+    }
+    nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li {
+        float: none;
+        margin-bottom: 5px;
+    }
+    nav li a {
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 5px 16px;
+        text-decoration: none;
+    }
+}
+
+
+
+/* Header styles ============================================*/
+header {
+    padding: 15px;
+    position: relative;
+}
+/* Container for the image with overlay and text */
+.header-image-overlay {   
+    position: relative;
+    overflow: hidden; /* Ensure the overlay is contained within the image */
+    height: 155px; /* Set the fixed height for cropping */
+}
+/* Image styles */
+.header-image-overlay img {
+    width: 100%; /* Make the image responsive */
+    height: 100%; /* Ensure the image covers the container */
+    
+    object-fit: cover; /* Crop the image to cover the container */
+    display: block; /* Remove extra spacing below inline images */
+    animation: fadeIn .75s ease-in-out forwards;
+}
+/* Overlay text styles */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the text is above the overlay */
+    color: #fff; /* Set the text color */
+    text-align: center;
+    /* animation: fadeIn 1.0s ease-in-out forwards; */
+}
+.overlay-text h2 {
+    font-size: 24px; /* Adjust the font size */
+    margin: 0;
+    padding: 10px 20px;
+}
+/* Dark overlay */
+.dark-overlay {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+/* Body styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Image styles */
+img {
+    height: auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: block; /* To remove any default inline styling */
+    margin: 0 auto; /* Center the image */
+}
+
+
+
+/* Home page styles ============================================*/
+.home_main {
+    display: flex;
+    padding: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+.home_text {
+    flex: 1.25;
+    opacity: 0;
+    animation: fadeIn 1.25s ease-in-out forwards;
+}
+.home_main p, h3 {
+    margin-right: 20px; /* Add some spacing between the paragraph and image */
+}
+/* Image styles */
+.home_main img {
+    flex: .75; /* Take up remaining space */
+    min-height: 300px;
+    min-width: 300px;
+    animation: slideInFromRight 1.25s ease-in-out forwards;
+    
+}
+.home_main img:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.home_main img:hover {
+    transform: scale(1.1);
+}
+@media only screen and (max-width: 600px) {
+    .home_main {
+        flex-direction: column;
+    }
+
+    .home_text {
+        flex: 1; 
+    }
+
+    .home_main img {
+        flex: 1; 
+        margin-top: 15px;
+    }
+}
+
+
+/* About Me page styles ============================================*/
+.about_me_text {
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    animation: fadeIn .5s ease-in-out forwards;
+}
+#about_me_content{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Portfolio page styles ============================================*/
+.portfolio_main {
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Work In Progress section in Portfolio page  */
+.video_list {
+    list-style: none;
+    margin: auto;
+}
+/* Video item styles */
+.video_item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px; /* Adjust as needed */
+}
+/* Video content styles */
+.video_content {
+    flex: 1; /* Take up remaining space */
+}
+/* Video styles */
+.video_content video {
+    width: 100%; /* Make the video responsive */
+    height: auto;
+    display: block;
+    border-radius: 5px;;
+}
+/* Video info styles */
+.video_info {
+    flex: .5; /* Take up remaining space */
+    padding: 10px;
+}
+/* Video link styles */
+.video_info h2 a {
+    color: #333;
+    /* Remove underline */
+    text-decoration: none;
+}
+/* Responsive adjustments for video*/
+@media (max-width: 700px) {
+    .video_item {
+        /* Stack items vertically on small screens */
+        flex-direction: column; 
+    }
+    .video_content,
+    .video_info {
+        /* Smaller width on small screens */
+        width: 85%; 
+    }
+}
+
+/* Skills section in Portfolio page */
+#skills{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/* Style table */
+#skills_table{
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    max-width: 100vw;
+}
+/* Style header cells */
+#skills_table th {
+    background-color: #f2f2f2;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+/* Style data cells */
+#skills_table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+/* Add alternating row background color for better readability */
+#skills_table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+/* Footer styles ========================================*/
+footer {
+    margin-top: auto;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background-color: #f4f4f4f4;
+}
+
+
+/* Contact me page styles ========================================= */
+/* Apply some styling to the form - going for simple modern */
+#contactForm{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+/* Bold labels */
+#contactForm label {
+    margin-bottom: 8px;
+}
+/* Style form inputs and buttons the same */
+#contactForm input, button, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif; 
+}
+#contactForm button:hover {
+    background-color: #e3e3e3;
+}
+#message {
+    height: 200px;
+    resize: vertical;
+}
+.contact_me_main a{
+    color: #333;
+}
+.contact_me_main > div {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.contact_me_main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact_me_main p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.fade_from_left{
+    opacity: 0;
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+#successBanner{
+    display: none; 
+    background-color: #5abb5d; 
+    border-radius: 5px;
+    color: white; 
+    text-align: center; 
+    padding: 10px; margin-top: 10px;
+}
+
+/* Resume page styling ============================================*/
+#resumeIFrame {
+    width: 75%;
+    max-width: 700px;
+    height: 800px;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+}
+.resume_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+    height: 100vh; /* Set the height of the container to 100% of the viewport height */
+}
+.resume_main div {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.download_button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #3498db; /* Change this to your desired background color */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.download_button:hover {
+    background-color: #2980b9; /* Change this to the hover color you prefer */
+}
+.fade_from_below {
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-out forwards;
+}
+
+
+/* KeyFrames ============================================*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
